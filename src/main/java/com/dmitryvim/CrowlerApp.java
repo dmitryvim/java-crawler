@@ -4,6 +4,8 @@ import java.net.URI;
 
 public class CrowlerApp {
 
+    // TODO fat jar
+    // TODO readme to start
     public static void main(String[] args) {
         var processor = new Processor();
         // TODO parametrise app

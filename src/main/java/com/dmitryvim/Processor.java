@@ -8,19 +8,20 @@ public class Processor {
 
 
     private Set<URI> parsed = new HashSet<>();
-    private Map<URI, List<URI>> edges = new HashMap<>();
+    private Map<URI, Set<URI>> edges = new HashMap<>();
 
     // TODO check fuxed capacity
     private ArrayBlockingQueue<URI> queue = new ArrayBlockingQueue<>(100);
 
+    // TODO add ctor params
     private final PageLoader pageLoader = new PageLoader();
     private final PageParser pageReader = new PageParser();
     private final Verificator verificator = new Verificator();
 
-    public Map<URI, List<URI>> crawl(URI uri) {
+    public Map<URI, Set<URI>> crawl(URI uri) {
         parsed.add(uri);
         queue.add(uri);
-        while(!queue.isEmpty()) {
+        while(!queue.isEmpty() && parsed.size() < 100) {
             step();
         }
         return edges;
@@ -33,7 +34,7 @@ public class Processor {
         add(uri, children);
     }
 
-    private void add(URI parent, List<URI> children) {
+    private void add(URI parent, Set<URI> children) {
         edges.put(parent, children);
         children.forEach(ch -> {
             if (verificator.verify(ch) && parsed.add(ch)) {
