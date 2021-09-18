@@ -34,7 +34,9 @@ Please note that we would like the program not only to follow links directly on 
 
 You should make it as fast as possible by parallelizing work whenever it’s appropriate.
 
-In order to simplify the problem we will add the condition that the links that should be followed should be under the java.com domain or relative links (if you’re uncertain what a relative here is a decent resource https://www.coffeecup.com/help/articles/absolute-vsrelative-pathslinks/). In other words, if there is a link to google.com, do not follow it!
+In order to simplify the problem we will add the condition that the links that should be followed should be under the java.com domain or relative links (if you’re uncertain what a relative here is a decent resource https://www.coffeecup.com/help/articles/absolute-vsrelative-pathslinks/). 
+
+In other words, if there is a link to google.com, do not follow it!
 
 (otherwise the program will try to crawl the whole internet which may take a while J)
 
