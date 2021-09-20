@@ -1,5 +1,8 @@
 package com.dmitryvim;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,6 +11,8 @@ import java.net.URI;
 import java.net.URL;
 
 public class PageLoader {
+
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     public String load(URI uri) {
         try {
@@ -23,8 +28,7 @@ public class PageLoader {
             }
             return content.toString();
         } catch (IOException e) {
-            // TODO logs
-            e.printStackTrace();
+            log.error("Unable to load page: {}", uri, e);
             return "";
         }
     }
