@@ -9,7 +9,7 @@ To build the app please use gradle (Linux/Macos)
 To run the application, start it with java
 
 ```bash
-java -jar build/libs/java-crowler.jar
+java -jar build/libs/java-crawler.jar
 ```
 
 # problems and todos

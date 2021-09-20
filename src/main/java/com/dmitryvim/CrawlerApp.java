@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.net.URI;
 
-public class CrowlerApp {
+public class CrawlerApp {
 
     public static void main(String[] args) {
         var processor = new Processor();
