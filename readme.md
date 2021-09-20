@@ -18,5 +18,5 @@ java -jar build/libs/java-crawler.jar
 2. add tests to the processor in order to check orchestration
 3. move start page to command line arguments 
 4. move allowed websites to configuration
-5. maybe use selenium to read <a href> links and put PageLoader.class + PageParser.class functions in the same class
+5. maybe use selenium to read `<a href>` links and put PageLoader.class + PageParser.class functions in the same class
 6. prettify json
